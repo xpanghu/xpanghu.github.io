@@ -1,0 +1,84 @@
+:root {
+  --theme: #f7f6f2;
+  --entry: #fffefa;
+  --primary: #292e2b;
+  --secondary: #696e68;
+  --content: #353a36;
+  --code-bg: #efeee8;
+  --border: #dedfd5;
+  --accent: #47624e;
+  --main-width: 760px;
+  --radius: 10px;
+}
+
+:root[data-theme="dark"] {
+  --theme: #1c211e;
+  --entry: #252b27;
+  --primary: #eceee7;
+  --secondary: #b0b9ad;
+  --content: #d5dbd2;
+  --code-bg: #2b332d;
+  --border: #3a443d;
+  --accent: #a7c5a3;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.list { background: var(--theme); }
+.logo a { font-size: 23px; letter-spacing: .03em; }
+.nav { border-bottom: 1px solid var(--border); }
+#menu { gap: 20px; }
+#menu li + li { margin-inline-start: 0; }
+#menu a { font-size: 15px; }
+.home-info { min-height: 280px; margin-bottom: 48px; }
+.home-info::before {
+  content: "NOTES & THOUGHTS";
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  margin-bottom: 18px;
+}
+.home-info h1 { font-size: clamp(27px, 4vw, 36px); line-height: 1.5; }
+.home-info .entry-content { font-size: 16px; line-height: 1.9; margin-top: 14px; }
+.home-info .entry-content p { margin-bottom: 10px; }
+.home-info .entry-content a { color: var(--accent); }
+.social-icons a { padding: 8px 14px 8px 0; }
+.post-entry { padding: 25px 28px; border-color: var(--border); }
+.post-entry .entry-header h2 { font-size: 21px; line-height: 1.5; }
+.entry-content { line-height: 1.8; }
+.entry-footer { margin-top: 15px; }
+.post-content { font-size: 17px; line-height: 1.95; }
+.post-content h2 { margin-top: 42px; }
+.post-content blockquote { border-inline-start-color: var(--accent); color: var(--secondary); }
+.post-content a { color: var(--accent); }
+.toc { border-color: var(--border); line-height: 1.8; }
+.post-title { line-height: 1.45; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+@media (min-width: 1320px) {
+  .post-single .toc {
+    position: fixed;
+    top: 110px;
+    left: calc(50% + 420px);
+    width: 210px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav { justify-content: center; }
+  .logo { margin: 0 auto; }
+  #menu { width: 100%; justify-content: center; gap: 16px; margin: 0; }
+  #menu a { font-size: 14px; }
+  .home-info { min-height: 260px; margin: 28px 0 36px; }
+  .post-entry { padding: 20px; }
+  .post-content { font-size: 16px; }
+}

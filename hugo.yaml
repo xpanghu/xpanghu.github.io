@@ -1,0 +1,108 @@
+# GitHub Actions 会自动使用仓库的 Pages 地址覆盖 baseURL。
+baseURL: https://xpanghu.github.io/
+title: 我的博客
+theme: PaperMod
+locale: zh-CN
+defaultContentLanguage: zh
+hasCJKLanguage: true
+timeZone: Asia/Shanghai
+enableRobotsTXT: true
+pagination:
+  pagerSize: 8
+
+outputs:
+  home: [HTML, RSS, JSON]
+
+taxonomies:
+  tag: tags
+  category: categories
+
+params:
+  description: 记录技术、阅读与日常。把学到的，慢慢写下来。
+  author: xpanghu
+  mainSections: [posts, logs]
+  defaultTheme: auto
+  DateFormat: "2006 年 1 月 2 日"
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
+  TocOpen: true
+  UseHugoToc: true
+  disableSpecial1stPost: true
+  hideSummary: false
+  homeInfoParams:
+    Title: 把学到的，慢慢写下来。
+    Content: |
+      你好，欢迎来到我的博客。
+
+      这里存放技术笔记、阅读记录，和日常的思考。
+      保持好奇，也给思考留一点空间。
+
+      [阅读文章 →](posts/) · [建站日志](logs/) · [关于本站](about/)
+  socialIcons:
+    - name: github
+      url: https://github.com/xpanghu
+      title: GitHub
+    - name: rss
+      url: index.xml
+      title: RSS 订阅
+  assets:
+    favicon: favicon.svg
+    favicon16x16: favicon-16x16.png
+    favicon32x32: favicon-32x32.png
+    apple_touch_icon: apple-touch-icon.png
+    safari_pinned_tab: favicon.svg
+    theme_color: "#f7f6f2"
+  fuseOpts:
+    isCaseSensitive: false
+    ignoreLocation: true
+    threshold: 0.3
+    minMatchCharLength: 1
+    keys: [title, summary, content]
+
+menu:
+  main:
+    - identifier: posts
+      name: 文章
+      pageRef: /posts
+      weight: 10
+    - identifier: logs
+      name: 建站日志
+      pageRef: /logs
+      weight: 20
+    - identifier: archives
+      name: 归档
+      pageRef: /archives
+      weight: 30
+    - identifier: tags
+      name: 标签
+      pageRef: /tags
+      weight: 40
+    - identifier: search
+      name: 搜索
+      pageRef: /search
+      weight: 50
+    - identifier: about
+      name: 关于
+      pageRef: /about
+      weight: 60
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+  highlight:
+    noClasses: false
+    lineNos: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: false
+
+caches:
+  images:
+    dir: :cacheDir/images
