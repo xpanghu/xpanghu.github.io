@@ -2,6 +2,8 @@
 
 基于 **Hugo + PaperMod** 的中文个人博客，支持 Markdown 写作、搜索、标签、归档、深浅色外观、文章目录、代码复制与 RSS。搭建思路参考[周鑫的建站日志](https://www.zhouxin.space/logs/)。
 
+访问博客：**[xpanghu.github.io](https://xpanghu.github.io/)** · [源码仓库](https://github.com/xpanghu/xpanghu.github.io) · [发布状态](https://github.com/xpanghu/xpanghu.github.io/actions/workflows/hugo.yaml)
+
 ## 本地预览
 
 本项目使用 Hugo **0.168.0**。macOS 可通过 `brew install hugo` 安装；其他系统参考 [Hugo 安装文档](https://gohugo.io/installation/)。重新克隆项目时，记得拉取主题：
@@ -47,18 +49,16 @@ make build
 
 ## GitHub Pages
 
-目标是个人主页仓库 `xpanghu/xpanghu.github.io`，对应地址为 `https://xpanghu.github.io/`。这是计划使用的地址，是否上线以 GitHub Pages 的部署结果为准。
+博客已发布到个人主页仓库 `xpanghu/xpanghu.github.io`，网址为 **https://xpanghu.github.io/**。本地 `main` 分支通过 SSH 连接该仓库。
 
 仓库包含 `.github/workflows/hugo.yaml`：推送到 `main` 后，自动安装固定版本的 Hugo，拉取固定的 PaperMod 子模块，构建并发布。构建时使用 GitHub 返回的 Pages 地址，因此也支持项目子目录。
 
-首次发布步骤：
+迁移到其他 GitHub 账户时的首次发布步骤：
 
-1. 在 GitHub 创建公开仓库 `xpanghu.github.io`。如果没有初始化内容，推送本地 `main` 分支即可。
+1. 在 GitHub 创建公开仓库 `<用户名>.github.io`，修改 `hugo.yaml` 的站点地址、作者和 GitHub 链接，并把本地 Git 远程地址指向新仓库。
 2. 在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
 3. 推送代码，或在 **Actions → Build and deploy blog → Run workflow** 手动运行。
 4. 等待工作流成功，再访问 Pages 提供的网址。
-
-本机尚未登录 GitHub CLI 时，可由站主运行 `gh auth login` 完成登录。不要把密码、令牌或 SSH 私钥写入博客文件。
 
 后续发布：
 
