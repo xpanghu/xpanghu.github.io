@@ -4,6 +4,7 @@ description: 关于这个博客，以及还在慢慢完善的自我介绍。
 ShowToc: false
 hideMeta: true
 searchHidden: true
+hiddenInRss: true
 ShowPostNavLinks: false
 ---
 
