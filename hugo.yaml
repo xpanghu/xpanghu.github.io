@@ -28,7 +28,7 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
-  ShowRssButtonInSectionTermList: true
+  ShowRssButtonInSectionTermList: false
   ShowToc: true
   TocOpen: true
   UseHugoToc: true
@@ -47,9 +47,6 @@ params:
     - name: github
       url: https://github.com/xpanghu
       title: GitHub
-    - name: rss
-      url: index.xml
-      title: RSS 订阅
   assets:
     favicon: favicon.svg
     favicon16x16: favicon-16x16.png
